@@ -24,4 +24,4 @@ jobs:
 
       - name: Run Postman collection
         run: |
-          newman run  "D:\ProjectEye\Ishraff-Phase1\APIAutomationCollections\Reports_Collections\Ishraff_V2.postman_collection.json" -e "D:\ProjectEye\Ishraff-Phase1\APIAutomationCollections\Reports_Collections\Ishraff-QA.postman_environment.json" -r htmlextra
+          newman run  "D:\ProjectEye\Ishraff-Phase1\APIAutomationCollections\ReportsCollections\Ishraff_V2.postman_collection.json" -e "D:\ProjectEye\Ishraff-Phase1\APIAutomationCollections\ReportsCollections\Ishraff_QA.postman_environment.json" -r htmlextra
