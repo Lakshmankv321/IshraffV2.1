@@ -25,5 +25,5 @@ jobs:
       - name: Run Postman collection
         run: |
           newman run "./APIAutomationCollections/ReportsCollections/Ishraff_V2_postman_collection.json" \
-    -e "./APIAutomationCollections/ReportsCollections/Ishraff_QA_postman_environment.json" \
-    -r htmlextra
+          -e "./APIAutomationCollections/ReportsCollections/Ishraff_QA_postman_environment.json" \
+          -r htmlextra
