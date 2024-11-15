@@ -20,6 +20,6 @@ jobs:
 
       - name: Run Postman collection
         run: |
-          newman run "./ProjectEye/Ishraff_Phase/APIAutomationCollections/ReportsCollections/Ishraff_V2_postman_collection.json" \
-          -e "./ProjectEye/Ishraff_Phase/APIAutomationCollections/ReportsCollections/Ishraff_QA_postman_environment.json" \
+          newman run "./ProjectEye/Ishraff_Phase/APIAutomationCollections/ReportsCollections/Ishraff_V2.postman_collection.json" \
+          -e "./ProjectEye/Ishraff_Phase/APIAutomationCollections/ReportsCollections/Ishraff_QA.postman_environment.json" \
           -r htmlextra
