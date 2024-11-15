@@ -1,10 +1,6 @@
-name: Run Postman Tests
+name: Postman Collection Test
 
-on:
-  push:
-    branches:
-      - main
-  pull_request:
+on: [push]
 
 jobs:
   postman-tests:
@@ -17,13 +13,13 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '18'
+          node-version: '16'
 
       - name: Install Newman
         run: npm install -g newman
 
       - name: Run Postman collection
         run: |
-               newman run "./ProjectEye/Ishraff_Phase/APIAutomationCollections/ReportsCollections/Ishraff_V2_postman_collection.json" 
-    -e "./ProjectEye/Ishraff_Phase/APIAutomationCollections/ReportsCollections/Ishraff_QA_postman_environment.json" 
-    -r htmlextra
+          newman run "./APIAutomationCollections/ReportsCollections/Ishraff_V2_postman_collection.json" \
+          -e "./APIAutomationCollections/ReportsCollections/Ishraff_QA_postman_environment.json" \
+          -r htmlextra
