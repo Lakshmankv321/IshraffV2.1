@@ -8,18 +8,21 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3  # Latest version, runs on Node.js 20 by default soon
+        uses: actions/checkout@v3
 
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '20'  # Explicitly set Node.js 20
+          node-version: '20'
 
       - name: Install Newman
         run: npm install -g newman
 
+      - name: Verify files in the directory
+        run: ls -R
+
       - name: Run Postman collection
         run: |
-          newman run "./ProjectEye/Ishraff_Phase/APIAutomationCollections/ReportsCollections/Ishraff_V2.postman_collection.json" \
-          -e "./ProjectEye/Ishraff_Phase/APIAutomationCollections/ReportsCollections/Ishraff_QA.postman_environment.json" \
+          newman run "./ProjectEye/Ishraff_Phase/APIAutomationCollections/ReportsCollections/Ishraff_V2_postman_collection.json" \
+          -e "./ProjectEye/Ishraff_Phase/APIAutomationCollections/ReportsCollections/Ishraff_QA_postman_environment.json" \
           -r htmlextra
